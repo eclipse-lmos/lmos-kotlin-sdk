@@ -5,7 +5,7 @@ dependencies {
 
     testImplementation(platform("io.ktor:ktor-bom:3.1.0"))
     testImplementation("org.eclipse.thingweb:kotlin-wot-binding-http:0.1.3-SNAPSHOT")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.1")
     testImplementation("io.ktor:ktor-client-okhttp")
     testImplementation("io.ktor:ktor-client-json")
     testImplementation("io.ktor:ktor-client-jackson")
