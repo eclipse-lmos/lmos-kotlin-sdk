@@ -1,7 +1,7 @@
 dependencies {
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
     api(project(":lmos-kotlin-sdk-base"))
-    implementation("org.slf4j:slf4j-api:2.0.16")
+    implementation("org.slf4j:slf4j-api:2.0.17")
 
     testImplementation(platform("io.ktor:ktor-bom:3.1.0"))
     testImplementation("org.eclipse.thingweb:kotlin-wot-binding-http:0.1.3-SNAPSHOT")
