@@ -1,17 +1,24 @@
+/*
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 package org.eclipse.lmos.sdk.server
 
-import ai.ancf.lmos.wot.Servient
-import ai.ancf.lmos.wot.Wot
-import ai.ancf.lmos.wot.thing.DEFAULT_CONTEXT
-import ai.ancf.lmos.wot.thing.schema.Context
-import ai.ancf.lmos.wot.thing.schema.DataSchema
-import ai.ancf.lmos.wot.thing.schema.VersionInfo
-import ai.ancf.lmos.wot.thing.schema.WoTExposedThing
+
 import org.eclipse.lmos.sdk.DataSchemaBuilder
 import org.eclipse.lmos.sdk.LMOSContext
 import org.eclipse.lmos.sdk.LMOSThingTypes
 import org.eclipse.lmos.sdk.model.AgentRequest
 import org.eclipse.lmos.sdk.model.AgentResult
+import org.eclipse.thingweb.Servient
+import org.eclipse.thingweb.Wot
+import org.eclipse.thingweb.thing.DEFAULT_CONTEXT
+import org.eclipse.thingweb.thing.schema.Context
+import org.eclipse.thingweb.thing.schema.DataSchema
+import org.eclipse.thingweb.thing.schema.VersionInfo
+import org.eclipse.thingweb.thing.schema.WoTExposedThing
 import org.slf4j.LoggerFactory
 import kotlin.reflect.full.createType
 

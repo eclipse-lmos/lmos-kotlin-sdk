@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: Robert Winkler
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.eclipse.lmos.sdk
 
-import ai.ancf.lmos.wot.thing.schema.Type
+import org.eclipse.thingweb.thing.schema.Type
 
 object LMOSThingTypes {
     val TOOL = Type("lmos:Tool")

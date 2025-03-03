@@ -1,15 +1,16 @@
 /*
- * SPDX-FileCopyrightText: Robert Winkler
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.eclipse.lmos.sdk.agents
 
-import ai.ancf.lmos.sdk.model.AgentRequest
-import ai.ancf.lmos.sdk.model.AgentResult
-import ai.ancf.lmos.sdk.model.Message
+
 import kotlinx.coroutines.flow.Flow
+import org.eclipse.lmos.sdk.model.AgentRequest
+import org.eclipse.lmos.sdk.model.AgentResult
+import org.eclipse.lmos.sdk.model.Message
 import kotlin.reflect.KClass
 
 interface ConversationalAgent {

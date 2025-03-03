@@ -1,13 +1,10 @@
 /*
- * SPDX-FileCopyrightText: Robert Winkler
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.eclipse.lmos.sdk.model
-
-import ai.ancf.lmos.sdk.model.AnonymizationEntity
-import ai.ancf.lmos.sdk.model.Message
 
 
 data class AgentRequest(

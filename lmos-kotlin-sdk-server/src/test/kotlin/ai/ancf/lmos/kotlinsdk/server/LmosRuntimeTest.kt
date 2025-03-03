@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: Robert Winkler
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,12 +7,7 @@
 package ai.ancf.lmos.kotlinsdk.server
 
 
-import ai.ancf.lmos.sdk.model.AgentRequest
-import ai.ancf.lmos.sdk.model.AgentResult
-import ai.ancf.lmos.sdk.model.AnonymizationEntity
-import ai.ancf.lmos.sdk.model.Message
-import ai.ancf.lmos.wot.Servient
-import ai.ancf.lmos.wot.binding.http.HttpProtocolServer
+
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -24,9 +19,15 @@ import io.ktor.client.request.*
 import io.ktor.serialization.jackson.*
 import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
+import org.eclipse.lmos.sdk.model.AgentRequest
+import org.eclipse.lmos.sdk.model.AgentResult
+import org.eclipse.lmos.sdk.model.AnonymizationEntity
+import org.eclipse.lmos.sdk.model.Message
+import org.eclipse.lmos.sdk.server.LmosAgent
+import org.eclipse.lmos.sdk.server.LmosRuntime
+import org.eclipse.thingweb.Servient
+import org.eclipse.thingweb.binding.http.HttpProtocolServer
 import org.junit.jupiter.api.Test
-import server.LmosAgent
-import server.LmosRuntime
 
 
 class LmosRuntimeTest {

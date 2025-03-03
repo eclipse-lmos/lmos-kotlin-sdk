@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: Robert Winkler
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.eclipse.lmos.sdk
 
-import ai.ancf.lmos.wot.thing.schema.*
+import org.eclipse.thingweb.thing.schema.*
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
 import kotlin.reflect.full.memberProperties

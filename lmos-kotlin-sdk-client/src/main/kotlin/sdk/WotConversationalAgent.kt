@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: Robert Winkler
+ * SPDX-FileCopyrightText: 2025 Deutsche Telekom AG and others
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -7,18 +7,19 @@
 package org.eclipse.lmos.sdk.agents
 
 
-import ai.ancf.lmos.wot.JsonMapper
-import ai.ancf.lmos.wot.Servient
-import ai.ancf.lmos.wot.Wot
-import ai.ancf.lmos.wot.binding.http.HttpProtocolClientFactory
-import ai.ancf.lmos.wot.binding.http.HttpsProtocolClientFactory
-import ai.ancf.lmos.wot.binding.websocket.WebSocketProtocolClientFactory
-import ai.ancf.lmos.wot.thing.ConsumedThing
+
 import io.opentelemetry.instrumentation.annotations.WithSpan
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import org.eclipse.lmos.sdk.model.AgentRequest
 import org.eclipse.lmos.sdk.model.AgentResult
+import org.eclipse.thingweb.JsonMapper
+import org.eclipse.thingweb.Servient
+import org.eclipse.thingweb.Wot
+import org.eclipse.thingweb.binding.http.HttpProtocolClientFactory
+import org.eclipse.thingweb.binding.http.HttpsProtocolClientFactory
+import org.eclipse.thingweb.binding.websocket.WebSocketProtocolClientFactory
+import org.eclipse.thingweb.thing.ConsumedThing
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import kotlin.reflect.KClass
@@ -35,11 +36,13 @@ class WotConversationalAgent private constructor(private val thing : ConsumedThi
         }
 
         suspend fun create(url: String): ConsumedConversationalAgent {
-            val wot = Wot.create(Servient(clientFactories = listOf(
+            val wot = Wot.create(
+                Servient(clientFactories = listOf(
                 HttpProtocolClientFactory(),
                 HttpsProtocolClientFactory(),
                 WebSocketProtocolClientFactory()
-            )))
+            ))
+            )
             return create(wot, url)
         }
     }
