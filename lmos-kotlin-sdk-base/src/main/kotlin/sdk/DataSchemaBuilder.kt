@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package ai.ancf.lmos.sdk
+package org.eclipse.lmos.sdk
 
 import ai.ancf.lmos.wot.thing.schema.*
 import kotlin.reflect.KClass

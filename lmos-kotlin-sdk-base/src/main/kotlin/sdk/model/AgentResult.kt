@@ -4,7 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package ai.ancf.lmos.sdk.model
+package org.eclipse.lmos.sdk.model
+
+import ai.ancf.lmos.sdk.model.AnonymizationEntity
+import ai.ancf.lmos.sdk.model.Message
 
 
 data class AgentResult(

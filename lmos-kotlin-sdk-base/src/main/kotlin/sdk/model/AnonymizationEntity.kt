@@ -4,6 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package ai.ancf.lmos.sdk.model
+package org.eclipse.lmos.sdk.model
 
 data class AnonymizationEntity(val type: String, val value: String, val replacement: String)

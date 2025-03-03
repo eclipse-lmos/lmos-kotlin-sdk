@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package ai.ancf.lmos.sdk.model
+package org.eclipse.lmos.sdk.model
 
 data class Message(
     val role: String,

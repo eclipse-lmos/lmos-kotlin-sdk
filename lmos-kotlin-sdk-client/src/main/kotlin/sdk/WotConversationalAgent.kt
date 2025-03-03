@@ -4,10 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package ai.ancf.lmos.sdk.agents
+package org.eclipse.lmos.sdk.agents
 
-import ai.ancf.lmos.sdk.model.AgentRequest
-import ai.ancf.lmos.sdk.model.AgentResult
+
 import ai.ancf.lmos.wot.JsonMapper
 import ai.ancf.lmos.wot.Servient
 import ai.ancf.lmos.wot.Wot
@@ -18,13 +17,15 @@ import ai.ancf.lmos.wot.thing.ConsumedThing
 import io.opentelemetry.instrumentation.annotations.WithSpan
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import org.eclipse.lmos.sdk.model.AgentRequest
+import org.eclipse.lmos.sdk.model.AgentResult
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import kotlin.reflect.KClass
 
 
 class WotConversationalAgent private constructor(private val thing : ConsumedThing) :
-    ConsumedConversationalAgent{
+    ConsumedConversationalAgent {
 
     private val log : Logger = LoggerFactory.getLogger(ConversationalAgent::class.java)
 

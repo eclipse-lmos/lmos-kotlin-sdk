@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package ai.ancf.lmos.sdk.agents
+package org.eclipse.lmos.sdk.agents
 
 import ai.ancf.lmos.sdk.model.AgentRequest
 import ai.ancf.lmos.sdk.model.AgentResult

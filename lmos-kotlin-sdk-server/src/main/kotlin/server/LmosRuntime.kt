@@ -1,16 +1,5 @@
-/*
- * SPDX-FileCopyrightText: Robert Winkler
- *
- * SPDX-License-Identifier: Apache-2.0
- */
+package org.eclipse.lmos.sdk.server
 
-package ai.ancf.lmos.kotlinsdk.server
-
-import ai.ancf.lmos.sdk.DataSchemaBuilder
-import ai.ancf.lmos.sdk.LMOSContext
-import ai.ancf.lmos.sdk.LMOSThingTypes
-import ai.ancf.lmos.sdk.model.AgentRequest
-import ai.ancf.lmos.sdk.model.AgentResult
 import ai.ancf.lmos.wot.Servient
 import ai.ancf.lmos.wot.Wot
 import ai.ancf.lmos.wot.thing.DEFAULT_CONTEXT
@@ -18,6 +7,11 @@ import ai.ancf.lmos.wot.thing.schema.Context
 import ai.ancf.lmos.wot.thing.schema.DataSchema
 import ai.ancf.lmos.wot.thing.schema.VersionInfo
 import ai.ancf.lmos.wot.thing.schema.WoTExposedThing
+import org.eclipse.lmos.sdk.DataSchemaBuilder
+import org.eclipse.lmos.sdk.LMOSContext
+import org.eclipse.lmos.sdk.LMOSThingTypes
+import org.eclipse.lmos.sdk.model.AgentRequest
+import org.eclipse.lmos.sdk.model.AgentResult
 import org.slf4j.LoggerFactory
 import kotlin.reflect.full.createType
 
