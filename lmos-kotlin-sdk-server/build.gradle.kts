@@ -1,5 +1,5 @@
 dependencies {
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
     api(project(":lmos-kotlin-sdk-base"))
     implementation("org.slf4j:slf4j-api:2.0.16")
 
