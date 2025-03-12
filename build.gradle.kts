@@ -26,7 +26,7 @@ subprojects {
     dependencies {
         testImplementation(kotlin("test"))
         testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test")
-        testImplementation("io.mockk:mockk:1.13.13")
+        testImplementation("io.mockk:mockk:1.13.17")
     }
 
     tasks.register<Jar>("sourcesJar") {
