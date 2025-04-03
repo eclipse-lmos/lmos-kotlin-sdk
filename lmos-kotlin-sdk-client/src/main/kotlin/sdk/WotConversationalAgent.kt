@@ -6,8 +6,6 @@
 
 package org.eclipse.lmos.sdk.agents
 
-
-
 import io.opentelemetry.instrumentation.annotations.WithSpan
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -31,6 +29,7 @@ class WotConversationalAgent private constructor(private val thing : ConsumedThi
     private val log : Logger = LoggerFactory.getLogger(ConversationalAgent::class.java)
 
     companion object {
+
         suspend fun create(wot: Wot, url: String): ConsumedConversationalAgent {
             return WotConversationalAgent(wot.consume(wot.requestThingDescription(url)) as ConsumedThing)
         }
@@ -57,19 +56,6 @@ class WotConversationalAgent private constructor(private val thing : ConsumedThi
         }
     }
 
-    override suspend fun <T : Any> consumeEvent(eventName: String, clazz: KClass<T>, listener: EventListener<T>, ) {
-        thing.subscribeEvent(eventName, listener = { event ->
-            try{
-                val parsedEvent = JsonMapper.instance.treeToValue(event.value(), clazz.java)
-                // Pass it to the listener
-                listener.handleEvent(parsedEvent)
-            } catch (e: Exception) {
-                log.error("Failed to parse event", e)
-                throw e
-            }
-        })
-    }
-
     override suspend fun <T : Any> consumeEvent(eventName: String, clazz: KClass<T>): Flow<T> {
         return thing.consumeEvent(eventName).map { event ->
             try {
@@ -81,4 +67,8 @@ class WotConversationalAgent private constructor(private val thing : ConsumedThi
             }
         }
     }
+}
+
+suspend inline fun <reified T : Any> ConsumedConversationalAgent.consumeEvent(eventName: String): Flow<T> {
+    return consumeEvent(eventName, T::class)
 }

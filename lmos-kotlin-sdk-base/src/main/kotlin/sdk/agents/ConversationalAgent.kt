@@ -18,7 +18,6 @@ interface ConversationalAgent {
 }
 
 interface ConsumedConversationalAgent: ConversationalAgent {
-    suspend fun <T : Any> consumeEvent(eventName: String, clazz: KClass<T>, listener: EventListener<T>)
     suspend fun <T : Any> consumeEvent(eventName: String, clazz: KClass<T>) : Flow<T>
 }
 

@@ -1,15 +1,19 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     kotlin("jvm") version "2.0.20"
     id("org.jetbrains.kotlinx.kover") version "0.8.3"
     id("org.cadixdev.licenser") version "0.6.1"
-    `maven-publish`
+    id("com.vanniktech.maven.publish") version "0.31.0"
+    id("org.cyclonedx.bom") version "2.2.0" apply false
 }
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jetbrains.kotlinx.kover")
-    apply(plugin = "maven-publish")
+    apply(plugin = "com.vanniktech.maven.publish")
     apply(plugin = "org.cadixdev.licenser")
+    apply(plugin = "org.cyclonedx.bom")
 
     group = "org.eclipse.lmos"
     version = "0.1.0-SNAPSHOT"
@@ -21,7 +25,6 @@ subprojects {
         include("**/*.yaml")
         exclude("**/*.properties")
     }
-
 
     dependencies {
         testImplementation(kotlin("test"))
@@ -46,20 +49,33 @@ subprojects {
         add("archives", tasks["javadocJar"])
     }
 
-    publishing {
-        publications {
-            create<MavenPublication>("mavenKotlin") {
-                from(components["java"])
-                artifact(tasks["sourcesJar"])
-                artifact(tasks["javadocJar"])
-                artifactId = project.name
+    mavenPublishing {
+        publishToMavenCentral(SonatypeHost.DEFAULT, automaticRelease = true)
+        signAllPublications()
+
+        pom {
+            name = "lmos-kotlin-sdk"
+            description = "The LMOS Kotlin SDK to devevlop WoT-enabled Agents."
+            url = "https://github.com/eclipse-lmos/lmos-kotlin-sdk"
+            licenses {
+                license {
+                    name = "Apache-2.0"
+                    distribution = "repo"
+                    url = "https://github.com/eclipse-lmos/lmos-kotlin-sdk/blob/master/LICENSES/Apache-2.0.txt"
+                }
+            }
+            developers {
+                developer {
+                    id = "robwin"
+                    name = "Robert Winkler"
+                    email = "opensource@telekom.de"
+                }
+            }
+            scm {
+                url = "https://github.com/eclipse-thingweb/lmos-kotlin-sdk.git"
             }
         }
-        repositories {
-            mavenLocal()
-        }
     }
-
 
     tasks.test {
         useJUnitPlatform()
