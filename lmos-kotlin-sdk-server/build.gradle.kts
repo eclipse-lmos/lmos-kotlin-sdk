@@ -12,7 +12,7 @@ dependencies {
     testImplementation("io.ktor:ktor-client-serialization")
     testImplementation("io.ktor:ktor-client-content-negotiation")
     testImplementation("io.ktor:ktor-serialization-jackson")
-    testImplementation("org.assertj:assertj-core:3.24.2")
+    testImplementation("org.assertj:assertj-core:3.27.3")
 }
 
 tasks.register("listConfigurations") {
