@@ -14,6 +14,6 @@ dependencies {
 
     testImplementation(project(":lmos-kotlin-sdk-client"))
     testImplementation("org.eclipse.thingweb:kotlin-wot-binding-http:0.1.0-SNAPSHOT")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
