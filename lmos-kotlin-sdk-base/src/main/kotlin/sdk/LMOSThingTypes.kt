@@ -6,9 +6,7 @@
 
 package org.eclipse.lmos.sdk
 
-import org.eclipse.thingweb.thing.schema.Type
-
 object LMOSThingTypes {
-    val TOOL = Type("lmos:Tool")
-    val AGENT = Type("lmos:Agent")
+    const val TOOL = "lmos:Tool"
+    const val AGENT = "lmos:Agent"
 }

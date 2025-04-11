@@ -1,28 +1,19 @@
-dependencies {
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-    api(project(":lmos-kotlin-sdk-base"))
-    implementation("org.slf4j:slf4j-api:2.0.16")
-
-    testImplementation(platform("io.ktor:ktor-bom:3.1.0"))
-    testImplementation("org.eclipse.thingweb:kotlin-wot-binding-http:0.1.0-SNAPSHOT")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
-    testImplementation("io.ktor:ktor-client-okhttp")
-    testImplementation("io.ktor:ktor-client-json")
-    testImplementation("io.ktor:ktor-client-jackson")
-    testImplementation("io.ktor:ktor-client-serialization")
-    testImplementation("io.ktor:ktor-client-content-negotiation")
-    testImplementation("io.ktor:ktor-serialization-jackson")
-    testImplementation("org.assertj:assertj-core:3.24.2")
+plugins {
+    kotlin("plugin.spring") version "1.9.10"
+    id("org.springframework.boot") version "3.1.5" // Use the latest compatible version
+    id("io.spring.dependency-management") version "1.1.3"
 }
 
-tasks.register("listConfigurations") {
-    doLast {
-        configurations.forEach { config ->
-            println("Configuration: ${config.name}")
-            println("  Can be resolved: ${config.isCanBeResolved}")
-            println("  Can be consumed: ${config.isCanBeConsumed}")
-            println("  Extends from: ${config.extendsFrom.joinToString { it.name }}")
-            println()
-        }
-    }
+dependencies {
+    api("org.eclipse.thingweb:kotlin-wot-spring-boot-starter:0.1.0-SNAPSHOT")
+    api(project(":lmos-kotlin-sdk-base"))
+
+    testImplementation(platform("io.ktor:ktor-bom:3.1.0"))
+    testImplementation("org.eclipse.lmos:arc-spring-boot-starter:0.122.0-M2")
+    testImplementation("org.eclipse.lmos:arc-azure-client:0.122.0-M2")
+
+    testImplementation(project(":lmos-kotlin-sdk-client"))
+    testImplementation("org.eclipse.thingweb:kotlin-wot-binding-http:0.1.0-SNAPSHOT")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

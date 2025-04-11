@@ -1,0 +1,39 @@
+#
+# SPDX-FileCopyrightText: Robert Winkler
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+spring:
+  application:
+    name: chat-agent    # Service name for tracing
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0    # Sample 100% of requests for full tracing (adjust in production as needed)
+  observations:
+    annotations:
+      enabled: true       # Enable @Observed (if you use observation annotations in code)
+
+arc:
+  ai:
+    clients:
+      - id: GPT-4o
+        model-name: <model>
+        api-key: <key>
+        client: openai
+        url: <url>
+
+wot:
+  servient:
+    websocket:
+      server:
+        enabled: false
+        host: localhost
+        port: 8181
+    http:
+      server:
+        enabled: true
+        host: localhost
+        port: 9080
