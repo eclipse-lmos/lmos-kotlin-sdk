@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     api("org.eclipse.thingweb:kotlin-wot-spring-boot-starter:0.1.0-SNAPSHOT")
+    api("org.eclipse.thingweb:kotlin-wot-reflection:0.1.0-SNAPSHOT")
     api(project(":lmos-kotlin-sdk-base"))
 
     testImplementation(platform("io.ktor:ktor-bom:3.1.0"))

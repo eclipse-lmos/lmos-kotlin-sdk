@@ -1,15 +1,11 @@
 package org.eclipse.lmos.sdk.server
 
-import kotlinx.coroutines.runBlocking
-import org.eclipse.lmos.sdk.agents.WotConversationalAgent
-import org.eclipse.lmos.sdk.agents.lastMessage
-import org.eclipse.lmos.sdk.agents.toAgentRequest
+
 import org.eclipse.thingweb.Wot
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
-import kotlin.test.Test
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class AgentApplicationTest {
