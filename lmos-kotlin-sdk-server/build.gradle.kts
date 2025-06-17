@@ -11,8 +11,8 @@ dependencies {
     api(project(":lmos-kotlin-sdk-base"))
 
     testImplementation(platform("io.ktor:ktor-bom:3.1.0"))
-    testImplementation("org.eclipse.lmos:arc-spring-boot-starter:0.122.0-M2")
-    testImplementation("org.eclipse.lmos:arc-azure-client:0.122.0-M2")
+    testImplementation("org.eclipse.lmos:arc-spring-boot-starter:0.136.0")
+    testImplementation("org.eclipse.lmos:arc-azure-client:0.136.0")
 
     testImplementation(project(":lmos-kotlin-sdk-client"))
     testImplementation("org.eclipse.thingweb:kotlin-wot-binding-http:0.1.0-SNAPSHOT")
