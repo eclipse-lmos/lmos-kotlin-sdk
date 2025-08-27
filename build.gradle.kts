@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.0.20"
+    kotlin("jvm") version "2.2.10"
     id("org.jetbrains.kotlinx.kover") version "0.8.3"
     id("org.cadixdev.licenser") version "0.6.1"
     id("com.vanniktech.maven.publish") version "0.34.0"
