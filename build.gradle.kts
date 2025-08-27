@@ -1,10 +1,8 @@
-import com.vanniktech.maven.publish.SonatypeHost
-
 plugins {
     kotlin("jvm") version "2.0.20"
     id("org.jetbrains.kotlinx.kover") version "0.8.3"
     id("org.cadixdev.licenser") version "0.6.1"
-    id("com.vanniktech.maven.publish") version "0.31.0"
+    id("com.vanniktech.maven.publish") version "0.34.0"
     id("org.cyclonedx.bom") version "2.2.0" apply false
 }
 
@@ -50,7 +48,7 @@ subprojects {
     }
 
     mavenPublishing {
-        publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
+        publishToMavenCentral(automaticRelease = true)
         signAllPublications()
 
         pom {
