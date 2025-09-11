@@ -10,7 +10,7 @@ dependencies {
     api("org.eclipse.thingweb:kotlin-wot-reflection:0.1.0-SNAPSHOT")
     api(project(":lmos-kotlin-sdk-base"))
 
-    testImplementation(platform("io.ktor:ktor-bom:3.1.0"))
+    testImplementation(platform("io.ktor:ktor-bom:3.3.0"))
     testImplementation("org.eclipse.lmos:arc-spring-boot-starter:0.122.0-M2")
     testImplementation("org.eclipse.lmos:arc-azure-client:0.122.0-M2")
 
