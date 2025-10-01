@@ -47,15 +47,11 @@ If you have an idea for a new feature or an improvement, please open an issue in
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/eclipse-lmos/lmos-router.git
+    git clone https://github.com/eclipse-lmos/lmos-kotlin-sdk.git
     cd lmos-router
     ```
 
-2. **Set environment variables**:
-    - `OPENAI_API_KEY`: Your OpenAI API key.
-    - `VECTOR_SEED_JSON_FILE_PATH`: Path to the JSON file containing seed vectors.
-
-3. **Build the project**:
+2. **Build the project**:
     ```bash
     ./gradlew build
     ```
